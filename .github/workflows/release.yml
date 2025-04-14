@@ -226,6 +226,7 @@ jobs:
       - name: Create GitHub release
         uses: ncipollo/release-action@v1
         with:
+          tag: ${{ env.VERSION_TAG }}
           draft: true        
           artifacts: "releases/openMINDS_MATLAB_${{ env.versionNumber }}.mltbx"
           generateReleaseNotes: true
