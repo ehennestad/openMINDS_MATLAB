@@ -235,6 +235,5 @@ jobs:
           tag: ${{ env.VERSION_TAG }}
           draft: true        
           artifacts: "releases/openMINDS_MATLAB_${{ env.versionNumber }}.mltbx"
-          tag: ${{ env.VERSION_TAG }}
           generateReleaseNotes: true
           body: "![MATLAB Versions Tested](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FopenMetadataInitiative%2FopenMINDS_MATLAB%2Fgh-badges%2F.github%2Fbadges%2F${{ env.VERSION_TAG }}%2Ftested_with.json)"
