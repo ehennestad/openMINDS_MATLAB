@@ -99,10 +99,9 @@ jobs:
           
   # Report on what releases tested successfully.
   # Generate a draft release based on the tag
-  # Recreate the tag with the final version of JSON files
+  # Recreate the tag with the final version of updated files
   release:
     needs: [test, setup_version]
-    if: always()
     runs-on: ubuntu-latest
     env:
       VERSION: ${{ needs.setup_version.outputs.version }}
@@ -149,7 +148,7 @@ jobs:
       - name: Set version number
         id: set_version
         run: |
-          versionNumber=$(echo "${{ env.VERSION }}" | sed 's/\./_/g')
+          versionNumber=$(echo "${{ env.VERSION_TAG }}" | sed 's/\./_/g')
           echo "versionNumber=$versionNumber" >> $GITHUB_ENV
 
       # Save the MLTBX.
